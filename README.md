@@ -1,5 +1,7 @@
 # Rspack incremental per-entry fullhash filename repro
 
+Rspack issue: [web-infra-dev/rspack#14869](https://github.com/web-infra-dev/rspack/issues/14869)
+
 `@rspack/core@2.1.4` reuses an old per-entry filename after the compilation full hash changes.
 
 ```bash
@@ -12,4 +14,3 @@ The fixture keeps the build-chunk-graph cache reusable by including an async imp
 Expected: `first.<second-compilation-hash>.js` exists.
 
 Actual: only `first.<first-compilation-hash>.js` exists.
-
